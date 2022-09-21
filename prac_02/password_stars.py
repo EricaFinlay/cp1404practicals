@@ -15,10 +15,23 @@ for count in range of length of password
     display *
 """
 
-minimum_length_of_password = 5
-password = input("Enter your password: ")
-while len(password) < minimum_length_of_password:
-    print(f"This password is too short.  It must be at least {minimum_length_of_password} characters.")
+def main():
+    minimum_length_of_password = 5
+    password = get_password(minimum_length_of_password)
+    print_line_of_stars(password)
+
+
+def print_line_of_stars(password):
+    for i in range(len(password)):
+        print("*", end=" ")
+
+
+def get_password(minimum_length_of_password):
     password = input("Enter your password: ")
-for i in range(len(password)):
-    print("*", end=" ")
+    while len(password) < minimum_length_of_password:
+        print(f"This password is too short.  It must be at least {minimum_length_of_password} characters.")
+        password = input("Enter your password: ")
+    return password
+
+
+main()
