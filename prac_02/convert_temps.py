@@ -8,19 +8,19 @@ More Temperatures
 Pseudocode:
 function main()
     get_valid_input()
-    open infile
-    open outfile
-    for line in infile
+    open file_in
+    open file_out
+    for line in file_in
         if user_choice == C
             celsius = line
             convert_celsius_to_fahrenheit(celsius)
-            display fahrenheit in outfile
+            display fahrenheit in file_out
         else:
             fahrenheit = line
             convert_fahrenheit_to_celsius(fahrenheit)
-            display celsius in outfile
-    in_file.close()
-    out_file.close()
+            display celsius in file_out
+    close file_in
+    close file_out
 
 
 function get_valid_input()

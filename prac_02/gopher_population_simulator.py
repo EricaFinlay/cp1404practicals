@@ -6,7 +6,7 @@ Extension
 Gopher Population Simulator
 
 Pseudocode:
-import random
+import random module
 
 function main()
     display welcome message
@@ -14,9 +14,9 @@ function main()
     display starting year
     population = 1000
     for i in range(2, 11)
-        birth_rate_percentage = random number (10 - 20)
+        birth_rate_percentage = random integer between 10 and 20 inclusive
         new_births = (population * birth_rate_percentage) // 100
-        death_rate_percentage = random number (5 - 25)
+        death_rate_percentage = random integer  between 5 and 25 inclusive
         new_deaths = (population * death_rate_percentage) // 100
         population = population + new_births - new_deaths
         display birth_rate, death_rate

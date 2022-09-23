@@ -6,15 +6,15 @@ Extension
 More Temperatures
 
 Pseudocode:
-import random
+import random module
 NUMBER_OF_TEMPERATURES = 15
 
 function main()
-    open outfile
+    open file_out
     for count in NUMBER_OF_TEMPERATURES
-        select random temperature(-200, 200)
-        display temperature in outfile
-    close outfile
+        temperature = random float between -200 and 200
+        display temperature in file_out
+    close file_out
 """
 
 import random

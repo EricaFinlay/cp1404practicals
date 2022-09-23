@@ -6,24 +6,24 @@ Practice and Extension Work
 More Scores
 
 Pseudocode:
-import random
+import random module
 
 function main()
     get number of scores
-    open outfile
+    open file_out
     for count in range of number_of_scores
-        get random score
+        score = random integer between 0 and 100
         determine_category(score)
-        display score, category in outfile
-    close outfile
+        display score, category in file_out
+    close file_out
 
 function determine_category(score)
     if score >= 90
-        category = excellent
+        category = "excellent"
     else if score >= 50
-        category = passable
+        category = "passable"
     else
-        category = bad
+        category = "bad"
     return category
 """
 

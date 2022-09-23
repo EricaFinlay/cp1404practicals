@@ -6,7 +6,7 @@ Refactoring
 Scores
 
 Pseudocode:
-import random
+import random module
 
 function main()
     get score
@@ -15,6 +15,8 @@ function main()
         get score
     category = determine_category(score)
     display message, category
+    random_score = determine_category(random integer between 0 and 100)
+    display random_score
 
 function determine_category(score)
     if score >= 90
@@ -30,7 +32,7 @@ import random
 
 
 def main():
-    """Take a valid user score, check it's category and print it, plus generate a random score."""
+    """Take a valid user score, check its category and print it, plus generate a random score."""
     score = float(input("Enter score: "))
     while score < 0 or score > 100:
         print("Invalid score.  Please try again.")

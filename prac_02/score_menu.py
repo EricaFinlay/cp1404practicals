@@ -35,11 +35,11 @@ function get_valid_score()
 
 function determine_category(user_score)
     if user_score >= 90
-        category = excellent
+        category = "excellent"
     else if user_score >= 50
-        category = passable
+        category = "passable"
     else
-        category = bad
+        category = "bad"
     return category
 
 
