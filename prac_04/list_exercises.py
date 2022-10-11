@@ -28,7 +28,6 @@ print(f"The smallest number is {min(numbers)}")
 print(f"The largest number is {max(numbers)}")
 print(f"The average of the numbers is {float(sum(numbers)) / len(numbers)}")
 
-
 # Version 2 (Practice & Extension Work):
 # Pseudocode for changes:
 # count = 1
@@ -37,6 +36,7 @@ print(f"The average of the numbers is {float(sum(numbers)) / len(numbers)}")
 #     append number to numbers
 #     count += 1
 #     get number
+
 numbers = []
 count = 1
 number = int(input(f"Number {count}: "))

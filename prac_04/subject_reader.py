@@ -16,6 +16,7 @@ def main():
     subject_details = get_subject_details()
     print(subject_details)
 
+
 def get_data():
     """Read data from file formatted like: subject,lecturer,number of students."""
     input_file = open(FILENAME)
