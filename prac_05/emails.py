@@ -38,7 +38,7 @@ function get_name_from_email(email)
 
 
 def main():
-    """Ask the user for their email and name and prints this information."""
+    """Ask the user for their email and name and print this information."""
     email_and_user = {}
     length_of_name = 0
     email = input("Email: ")
