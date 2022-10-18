@@ -8,7 +8,10 @@ Emails
 Estimate:   2 hours
 Actual:     1 hour 10 min
 
-The solution to this program was consulted on GitHub.
+The following reference was used to assist in writing this program -
+Reference:
+L. Ward, Prac solutions, "CP1404 Practical 5 - Suggested Solution - emails.py", CP1404 Programming II,
+College of Science and Engineering, James Cook University, Townsville.
 
 Pseudocode:
 function main()
