@@ -9,7 +9,7 @@ Project Management Program
 
 class Project:
 
-    def __init__(self, name="", start_date="", priority=0, cost_estimate=0.0, completion_percentage=0):
+    def __init__(self, name="", start_date=None, priority=0, cost_estimate=0.0, completion_percentage=0):
         """Initialise a Project."""
         self.name = name
         self.start_date = start_date
