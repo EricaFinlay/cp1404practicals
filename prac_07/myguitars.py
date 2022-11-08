@@ -25,6 +25,7 @@ class Guitar:
         return self.year < other.year
 
     def __repr__(self):
+        """Return a list of Guitar objects as a string."""
         return f"{self.name},{self.year},{self.cost}"
 
 

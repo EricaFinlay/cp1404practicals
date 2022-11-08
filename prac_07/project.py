@@ -18,8 +18,9 @@ class Project:
 
     def __str__(self):
         """Return a string representation of a Project."""
-        return f"{self.name}, start: {self.start_date}, priority {self.priority}, estimate: {self.cost_estimate}, " \
+        return f"{self.name}, start: {self.start_date.strftime('%d/%m/%Y')}, priority {self.priority}, estimate: ${self.cost_estimate}, " \
                f"completion: {self.completion_percentage}%"
 
     def __repr__(self):
-        return f"{self.name}\t{self.start_date}\t{self.priority}\t{self.cost_estimate}\t{self.completion_percentage}"
+        """Return a list of Project objects as a string."""
+        return f"{self.name}\t{self.start_date.strftime('%d/%m/%Y')}\t{self.priority}\t{self.cost_estimate}\t{self.completion_percentage}"
