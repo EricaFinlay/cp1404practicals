@@ -165,8 +165,10 @@ def get_valid_index(prompt, projects):
     while not is_valid_index:
         try:
             user_index = int(input(prompt))
-            if user_index < len(projects):
+            if user_index > (len(projects) - 1):
                 print("Number exceeds the number of projects")
+            elif user_index < 0:
+                print("Number must be 0 or greater")
             else:
                 is_valid_index = True
         except IndexError:
