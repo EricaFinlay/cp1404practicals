@@ -50,19 +50,20 @@ def main():
             date_string = get_valid_date("Start date (dd/mm/yyyy): ")
             start_date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
             priority = get_valid_integer("Priority: ")
-            # cost_estimate = float(input("Cost estimate: "))
             cost_estimate = get_valid_float("Cost estimate: ")
             completion_percentage = get_valid_integer("Completion percentage: ")
+            while completion_percentage > 100:
+                print("Number must be <= 100")
+                completion_percentage = get_valid_integer("Completion percentage: ")
             new_project = Project(name, start_date, priority, cost_estimate, completion_percentage)
             projects.append(new_project)
             print(new_project, "added to file.")
         elif menu_choice == "U":
             for i, project in enumerate(projects, 0):
                 print(i, project)
-            # chosen_index = int(input("Project choice: "))
             chosen_index = get_valid_index("Project choice: ", projects)
             print(projects[chosen_index])
-            new_percentage = input("New Percentage: ")
+            new_percentage = input("New percentage: ")
             if new_percentage != "":
                 projects[chosen_index].completion_percentage = int(new_percentage)
             new_priority = input("New Priority: ")
@@ -93,12 +94,10 @@ def load_projects(filename):
 
 def display_filtered(projects):
     """Filter projects by date."""
-    # date_string = input("Show projects that start after date (dd/mm/yyyy): ")
     date_string = get_valid_date("Show projects that start after date (dd/mm/yyyy): ")
     threshold_date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
     projects.sort(key=attrgetter('start_date'))
     filtered_projects = [project for project in projects if project.start_date > threshold_date]
-    # filtered_projects.sort(key=attrgetter('start_date'))
     for project in projects:
         if project in filtered_projects:
             print(project)
@@ -119,12 +118,12 @@ def get_valid_integer(prompt):
     while not is_valid_integer:
         try:
             user_input = int(input(prompt))
-            if user_input < 1:
-                print("Number must be >= 1")
+            if user_input < 0:
+                print("Number must be >= 0")
             else:
                 is_valid_integer = True
         except ValueError:
-            print("Invalid input; enter a valid number")
+            print("Invalid input")
     return user_input
 
 
@@ -134,12 +133,12 @@ def get_valid_float(prompt):
     while not is_valid_float:
         try:
             user_float = float(input(prompt))
-            if user_float < 1:
-                print("Number must be >= 1")
+            if user_float < 0:
+                print("Number must be >= 0")
             else:
                 is_valid_float = True
         except ValueError:
-            print("Invalid input; enter a valid number")
+            print("Invalid input")
     return user_float
 
 
@@ -155,7 +154,7 @@ def get_valid_date(prompt):
             else:
                 is_valid_date = True
         except ValueError:
-            print("Invalid input; enter a valid date")
+            print("Invalid input")
     return date_string
 
 
@@ -168,13 +167,13 @@ def get_valid_index(prompt, projects):
             if user_index > (len(projects) - 1):
                 print("Number exceeds the number of projects")
             elif user_index < 0:
-                print("Number must be 0 or greater")
+                print("Number must be >= 0")
             else:
                 is_valid_index = True
         except IndexError:
             print("Number exceeds the number of projects")
         except ValueError:
-            print("Invalid input; enter a valid number")
+            print("Invalid input")
     return user_index
 
 
