@@ -47,7 +47,7 @@ def main():
             display_filtered(projects)
         elif menu_choice == "A":
             name = get_valid_project_name()
-            date_string = input("Start date (dd/mm/yyyy): ")
+            date_string = get_valid_date("Start date (dd/mm/yyyy): ")
             start_date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
             priority = get_valid_integer("Priority: ")
             cost_estimate = float(input("Cost estimate: "))
@@ -122,6 +122,22 @@ def get_valid_integer(prompt):
         except ValueError:
             print("Invalid input; enter a valid number")
     return user_input
+
+
+def get_valid_date(prompt):
+    """Error check user input for valid date."""
+    is_valid_date = False
+    while not is_valid_date:
+        try:
+            date_string = input(prompt)
+            datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
+            if date_string == "":
+                print("Blank date is not acceptable")
+            else:
+                is_valid_date = True
+        except ValueError:
+            print("Invalid input; enter a valid date")
+    return date_string
 
 
 def save_projects(projects, filename):
