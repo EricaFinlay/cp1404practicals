@@ -1,6 +1,7 @@
 """
 CP1404 2022 Prac 08
 Erica Finlay
+
 Miles to Kilometres Converter
 
 The solutions branch in GitHub was consulted for the writing of this program:
@@ -17,11 +18,11 @@ MILES_TO_KILOMETRES_CONVERSION = 1.60934
 
 
 class DistanceConverter(App):
-    """Provide conversion of miles to kilometres."""
+    """DistanceConverter is a Kivy App for converting miles to kilometres."""
     output_number = StringProperty()
 
     def build(self):
-        """Create kivy app using kivy file."""
+        """ Build the Kivy app from the kv file."""
         self.title = "Convert Miles to Kilometres"
         self.root = Builder.load_file('convert_miles_km.kv')
         return self.root
@@ -32,7 +33,7 @@ class DistanceConverter(App):
         self.update_result(miles)
 
     def handle_editing(self, text, edit):
-        """Handle editing of number"""
+        """Handle editing of number."""
         miles = self.convert_to_number(text) + edit
         self.root.ids.input_number.text = str(miles)
 
