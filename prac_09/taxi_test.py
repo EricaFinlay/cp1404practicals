@@ -1,6 +1,6 @@
 """
 Erica Finlay
-CP1404 2022 Prac 08
+CP1404 2022 Prac 09
 
 Test Taxi
 
@@ -12,6 +12,7 @@ from prac_09.taxi import Taxi
 
 
 def main():
+    """Test a taxi."""
     my_taxi = Taxi("Prius 1", 100)
     my_taxi.drive(40)
     print(my_taxi)

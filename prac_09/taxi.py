@@ -1,4 +1,7 @@
 """
+CP1404 2022 Prac 09
+Erica Finlay
+
 CP1404/CP5632 Practical
 Car class
 
@@ -23,7 +26,7 @@ class Taxi(Car):
 
     def get_fare(self):
         """Return the price for the taxi trip."""
-        return self.price_per_km * self.current_fare_distance
+        return round(self.price_per_km * self.current_fare_distance, 1)
 
     def start_fare(self):
         """Begin a new fare."""
